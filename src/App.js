@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import CreatePost from "./pages/CreatePost";
 import Post from "./pages/Post";
@@ -42,7 +42,7 @@ function App() {
   }, []);
 
   const logout = () => {
-    localStorage.removeItem("accessToken")
+    localStorage.removeItem("accessToken");
     setAuthState({ username: "", id: 0, status: false });
   };
 
@@ -67,7 +67,7 @@ function App() {
           </div>
           <div className="loggedInContainer">
               <h1>{authState.username} </h1>
-              {authState.status && <button onClick={logout}> Logout</button>}
+              {authState.status && <button onClick={logout}>Logout</button>}
           </div>
         </div>
         <Routes>
